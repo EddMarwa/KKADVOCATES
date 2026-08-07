@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kariuki Kimochu &amp; Co. Advocates | Nairobi</title>
+<meta name="description" content="Kariuki Kimochu & Co. Advocates — Advocates of the High Court of Kenya, Commissioners for Oaths, Notary Public and Mediators, Nairobi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,680;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15171B;
+    --ink-2:#1D2025;
+    --charcoal:#3B4149;
+    --brass:#B58A3E;
+    --brass-bright:#D8B067;
+    --parchment:#F2ECE0;
+    --paper:#FBF8F2;
+    --line:#E4DCC9;
+    --ink-soft:#6B6F76;
+    --cream-soft:#DCD3BC;
+    --display:'Fraunces', serif;
+    --body:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+
+  :focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass-bright);
+  }
+  .eyebrow.dark{ color:var(--brass); }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: sticky;
+    top:0;
+    z-index: 50;
+    background: rgba(21,23,27,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(181,138,62,0.25);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 40px;
+    max-width: 1180px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-name{
+    color: var(--paper);
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+  }
+  .brand-name span{
+    display:block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--brass);
+    text-transform:uppercase;
+    margin-top: 2px;
+  }
+  .nav-links{
+    display:flex;
+    gap: 36px;
+  }
+  .nav-links a{
+    color: var(--parchment);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding: 4px 0;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0%;
+    height:1px;
+    background: var(--brass-bright);
+    transition: width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{
+    border:1px solid var(--brass);
+    color: var(--brass-bright) !important;
+    padding: 8px 18px;
+    border-radius: 2px;
+    font-size: 13px !important;
+  }
+  .nav-cta::after{ display:none; }
+  .nav-cta:hover{ background: var(--brass); color: var(--ink) !important; }
+  .menu-btn{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    background: radial-gradient(ellipse at 75% 20%, #23262c 0%, var(--ink) 55%);
+    color: var(--paper);
+    overflow: hidden;
+    padding: 120px 0 100px;
+  }
+  .hero-mark{
+    position:absolute;
+    right: -60px;
+    top: -40px;
+    width: 560px;
+    opacity: 0.06;
+    pointer-events:none;
+  }
+  .hero-particles{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items:end;
+  }
+  .hero h1{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(42px, 5.4vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 22px 0 26px;
+    max-width: 620px;
+  }
+  .hero h1 em{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--brass-bright);
+  }
+  .hero p.lede{
+    max-width: 480px;
+    color: var(--cream-soft);
+    font-size: 17px;
+    margin-bottom: 38px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background: linear-gradient(135deg, var(--brass-bright), var(--brass));
+    color: var(--ink);
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: transform .2s ease, box-shadow .2s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 26px rgba(181,138,62,0.35); }
+  .btn-ghost{
+    color: var(--parchment);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(242,236,224,0.4);
+    padding-bottom: 3px;
+  }
+  .btn-ghost:hover{ border-color: var(--brass-bright); color: var(--brass-bright); }
+
+  .hero-file{
+    border-left: 1px solid rgba(216,176,103,0.3);
+    padding-left: 32px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--cream-soft);
+    line-height: 2;
+  }
+  .hero-file .row{ display:flex; justify-content:space-between; gap: 20px; border-bottom: 1px dashed rgba(220,211,188,0.18); padding: 6px 0; }
+  .hero-file .row span:first-child{ color:#8b8f96; }
+
+  /* ---------- MARQUEE / CREDENTIAL STRIP ---------- */
+  .strip{
+    background: var(--ink-2);
+    border-top: 1px solid rgba(181,138,62,0.2);
+    border-bottom: 1px solid rgba(181,138,62,0.2);
+    padding: 18px 0;
+  }
+  .strip .wrap{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px 40px;
+  }
+  .strip span{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #9aa0a8;
+    text-transform: uppercase;
+  }
+  .strip span b{ color: var(--brass-bright); font-weight:500; }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ padding: 110px 0; }
+  .section-head{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items:end;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+  }
+  .section-head h2{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(30px, 3.4vw, 42px);
+    letter-spacing: -0.01em;
+    margin-top: 10px;
+  }
+  .section-head p{
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    max-width: 420px;
+    justify-self: end;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background: var(--paper); }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items:start;
+  }
+  .plate{
+    background: var(--ink);
+    border-radius: 3px;
+    padding: 44px 36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .plate::before{
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(circle at 20% 0%, rgba(181,138,62,0.14), transparent 60%);
+  }
+  .plate h3{
+    font-family: var(--display);
+    color: var(--paper);
+    font-size: 24px;
+    font-weight: 600;
+    position:relative;
+  }
+  .plate .role{
+    font-family: var(--mono);
+    color: var(--brass-bright);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 10px 0 26px;
+    position:relative;
+  }
+  .plate ul{ position:relative; }
+  .plate li{
+    display:flex;
+    gap: 12px;
+    color: var(--cream-soft);
+    font-size: 13.5px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(220,211,188,0.14);
+  }
+  .plate li:first-of-type{ border-top:none; }
+  .chev{ color: var(--brass-bright); flex-shrink:0; }
+
+  .about-copy p{ color:#3a3e44; font-size: 16.5px; margin-bottom: 20px; max-width: 560px; }
+  .about-copy p:first-of-type{ font-family: var(--display); font-size: 21px; font-weight:500; color: var(--ink); line-height:1.5; }
+
+  /* ---------- CLAUSES / PRACTICE AREAS ---------- */
+  .clauses{ background: var(--parchment); }
+  .clause-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .clause{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .clause.in{ opacity:1; transform:none; }
+  .clause:last-child{ border-bottom: 1px solid var(--line); }
+  .clause-num{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--brass);
+    letter-spacing: 0.06em;
+    padding-top: 4px;
+  }
+  .clause-body h4{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .clause-body p{ color: var(--ink-soft); font-size: 15px; max-width: 620px; }
+
+  /* ---------- SEAL / SIGNATURE SECTION ---------- */
+  .seal-section{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 130px 0;
+    position: relative;
+    overflow:hidden;
+  }
+  .seal-grid{
+    display:grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 70px;
+    align-items:center;
+  }
+  .seal-wrap{
+    display:flex;
+    justify-content:center;
+  }
+  .seal{
+    width: 240px;
+    height: 240px;
+    opacity: 0;
+    transform: scale(0.7) rotate(-14deg);
+    transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+  }
+  .seal.in{ opacity:1; transform: scale(1) rotate(-8deg); }
+  .seal-copy .eyebrow{ margin-bottom: 16px; }
+  .seal-copy h2{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3.2vw, 40px);
+    margin-bottom: 22px;
+    max-width: 520px;
+  }
+  .seal-copy p{ color: var(--cream-soft); font-size: 16px; max-width: 540px; margin-bottom: 16px; }
+
+  /* ---------- TESTIMONY ---------- */
+  .testimony{
+    background: var(--paper);
+    padding: 100px 0;
+  }
+  .quote-block{
+    max-width: 780px;
+    margin: 0 auto;
+    text-align:center;
+  }
+  .quote-block .mark{
+    font-family: var(--display);
+    font-size: 60px;
+    color: var(--brass);
+    line-height:1;
+    margin-bottom: 10px;
+  }
+  .quote-block blockquote{
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .quote-block cite{
+    display:block;
+    margin-top: 26px;
+    font-style:normal;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background: var(--ink-2);
+    color: var(--paper);
+    padding: 110px 0;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+  .contact h2{
+    font-family: var(--display);
+    font-weight:600;
+    font-size: clamp(30px, 3.4vw, 44px);
+    margin: 16px 0 26px;
+    max-width: 460px;
+  }
+  .contact-copy p{ color: var(--cream-soft); font-size: 16px; max-width: 440px; margin-bottom: 30px; }
+  .contact-list{ display:flex; flex-direction:column; gap:0; }
+  .contact-list li{
+    display:flex;
+    justify-content:space-between;
+    padding: 18px 0;
+    border-top: 1px solid rgba(220,211,188,0.16);
+    font-size: 14.5px;
+  }
+  .contact-list li:last-child{ border-bottom: 1px solid rgba(220,211,188,0.16); }
+  .contact-list span:first-child{ color:#8b8f96; font-family: var(--mono); font-size: 12px; letter-spacing:0.08em; text-transform:uppercase; }
+  .contact-list a:hover{ color: var(--brass-bright); }
+
+  .contact-card{
+    background: var(--ink);
+    border: 1px solid rgba(181,138,62,0.25);
+    border-radius: 3px;
+    padding: 40px;
+  }
+  .contact-card .eyebrow{ margin-bottom: 14px; }
+  .contact-card h3{ font-family: var(--display); font-size: 21px; margin-bottom: 20px; }
+  .field{ margin-bottom: 18px; }
+  .field label{ display:block; font-family: var(--mono); font-size: 11px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa0a8; margin-bottom: 8px; }
+  .field input, .field textarea{
+    width:100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(220,211,188,0.3);
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 14.5px;
+    padding: 8px 2px;
+  }
+  .field input:focus, .field textarea:focus{ border-color: var(--brass-bright); }
+  .field textarea{ resize:none; height: 70px; }
+  .contact-card .btn-primary{ width:100%; text-align:center; margin-top: 6px; border:none; cursor:pointer; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--ink);
+    padding: 34px 0;
+    border-top: 1px solid rgba(181,138,62,0.18);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap: 14px;
+  }
+  footer p{ font-family: var(--mono); font-size: 11.5px; color:#7d818a; letter-spacing:0.04em; }
+
+  /* ---------- REVEALS ---------- */
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .wrap{ padding: 0 24px; }
+    nav{ padding: 16px 24px; }
+    .nav-links{ display:none; }
+    .hero{ padding: 80px 0 60px; }
+    .hero-inner{ grid-template-columns: 1fr; gap: 40px; }
+    .hero-file{ border-left:none; border-top:1px solid rgba(216,176,103,0.3); padding-left:0; padding-top:24px; }
+    .section-head{ grid-template-columns: 1fr; }
+    .section-head p{ justify-self:start; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .clause{ grid-template-columns: 1fr; gap: 10px; }
+    .seal-grid{ grid-template-columns: 1fr; text-align:center; }
+    .seal-copy p{ margin-left:auto; margin-right:auto; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    section{ padding: 70px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal, .clause, .seal{ opacity:1 !important; transform:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="20,10 46,10 24,50 46,90 20,90 -2,50" fill="url(#g1)"/>
+        <polygon points="48,10 74,10 96,50 74,90 48,90 70,50" fill="url(#g2)"/>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D8B067"/>
+            <stop offset="1" stop-color="#8C6A2E"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#5B6270"/>
+            <stop offset="1" stop-color="#2B2E33"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="brand-name">Kariuki Kimochu &amp; Co.<span>Advocates · Nairobi</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#firm">The Firm</a>
+      <a href="#practice">Practice</a>
+      <a href="#seal">Notarial</a>
+      <a href="#contact" class="nav-cta">Book a Consultation</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <canvas class="hero-particles" aria-hidden="true"></canvas>
+  <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true">
+    <polygon points="20,10 46,10 24,50 46,90 20,90 -2,50" fill="#D8B067"/>
+    <polygon points="48,10 74,10 96,50 74,90 48,90 70,50" fill="#D8B067"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Ref: KK/ADV/NAI · Advocates, High Court of Kenya</div>
+      <h1>Counsel that reads<br>every clause <em>twice.</em></h1>
+      <p class="lede">Kariuki Kimochu &amp; Co. Advocates provides considered legal counsel for individuals and businesses in Nairobi — precise, unhurried, and built on more than paperwork.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Consultation</a>
+        <a href="#practice" class="btn-ghost">View practice areas</a>
+      </div>
+    </div>
+    <div class="hero-file">
+      <div class="row"><span>Advocate</span><span>Peter K. Kimochu</span></div>
+      <div class="row"><span>Qualification</span><span>LLB (Hons), Dip (KSL)</span></div>
+      <div class="row"><span>Status</span><span>Commissioner for Oaths &amp; Notary Public</span></div>
+      <div class="row"><span>Jurisdiction</span><span>Nairobi, Kenya</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Advocate of the High Court of Kenya</span>
+    <span>Commissioner for <b>Oaths</b></span>
+    <span><b>Notary</b> Public</span>
+    <span>Accredited <b>Mediator</b></span>
+  </div>
+</div>
+
+<section class="about" id="firm">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="plate reveal">
+        <h3>Peter K. Kimochu</h3>
+        <div class="role">Principal Advocate</div>
+        <ul>
+          <li><span class="chev">»</span> LLB (Hons)</li>
+          <li><span class="chev">»</span> Diploma, Kenya School of Law</li>
+          <li><span class="chev">»</span> Commissioner for Oaths</li>
+          <li><span class="chev">»</span> Notary Public</li>
+          <li><span class="chev">»</span> Accredited Mediator</li>
+        </ul>
+      </div>
+      <div class="about-copy reveal">
+        <p>The firm was built on a simple premise: legal work should be exact, not exhausting.</p>
+        <p>Kariuki Kimochu &amp; Co. Advocates advises individuals, families, and businesses across Nairobi on matters that require both technical precision and a steady hand — from property transactions to commercial disputes to the quiet, procedural work of commissioning and notarising documents correctly the first time.</p>
+        <p>Every matter is handled personally by Peter K. Kimochu, ensuring continuity from the first consultation through to resolution — no hand-offs, no juniors relaying instructions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clauses" id="practice">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow dark">Areas of Practice</div>
+        <h2>Where the firm advises.</h2>
+      </div>
+      <p>Six clauses of practice, each handled with the same procedural care as a document bound for the registry.</p>
+    </div>
+    <div class="clause-list">
+      <div class="clause"><div class="clause-num">Clause I</div><div class="clause-body"><h4>Conveyancing &amp; Property Law</h4><p>Sale agreements, transfers, leases, and title due diligence — handled to survive registry scrutiny, not just client sign-off.</p></div></div>
+      <div class="clause"><div class="clause-num">Clause II</div><div class="clause-body"><h4>Commercial &amp; Corporate Law</h4><p>Company formation, contracts, and commercial agreements for businesses that need counsel who understands both the law and the deal.</p></div></div>
+      <div class="clause"><div class="clause-num">Clause III</div><div class="clause-body"><h4>Civil Litigation &amp; Dispute Resolution</h4><p>Representation before the Kenyan courts in civil, contractual, and commercial disputes, pursued with the same discipline as any filed pleading.</p></div></div>
+      <div class="clause"><div class="clause-num">Clause IV</div><div class="clause-body"><h4>Family Law</h4><p>Succession, matrimonial property, and family matters handled with the discretion these cases require.</p></div></div>
+      <div class="clause"><div class="clause-num">Clause V</div><div class="clause-body"><h4>Mediation &amp; Arbitration</h4><p>Alternative dispute resolution for parties who need a resolution, not a prolonged court calendar.</p></div></div>
+      <div class="clause"><div class="clause-num">Clause VI</div><div class="clause-body"><h4>Notarial Services &amp; Commissioning of Oaths</h4><p>Affidavits, statutory declarations, and documents requiring notarisation — commissioned correctly, on the record.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seal-section" id="seal">
+  <div class="wrap seal-grid">
+    <div class="seal-wrap">
+      <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="94" fill="none" stroke="#B58A3E" stroke-width="1.4"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#B58A3E" stroke-width="1"/>
+        <path id="seal-arc-top" fill="none" d="M 32,100 A 68,68 0 0 1 168,100"/>
+        <path id="seal-arc-bot" fill="none" d="M 168,108 A 68,68 0 0 1 32,108"/>
+        <text font-family="IBM Plex Mono" font-size="10.5" letter-spacing="3" fill="#D8B067">
+          <textPath href="#seal-arc-top" startOffset="50%" text-anchor="middle">COMMISSIONER FOR OATHS</textPath>
+        </text>
+        <text font-family="IBM Plex Mono" font-size="10.5" letter-spacing="3" fill="#D8B067">
+          <textPath href="#seal-arc-bot" startOffset="50%" text-anchor="middle">NOTARY PUBLIC · NAIROBI</textPath>
+        </text>
+        <polygon points="82,84 96,84 86,100 96,116 82,116 72,100" fill="#D8B067" transform="translate(-6,0)"/>
+        <polygon points="104,84 118,84 128,100 118,116 104,116 114,100" fill="#EDEAE0" transform="translate(-6,0)"/>
+      </svg>
+    </div>
+    <div class="seal-copy">
+      <div class="eyebrow">Notarial &amp; Commissioning Services</div>
+      <h2>Every stamp is a signature on your behalf.</h2>
+      <p>As a Commissioner for Oaths and Notary Public, Peter K. Kimochu personally reviews and commissions affidavits, statutory declarations, powers of attorney, and documents for use abroad — work that carries legal weight and demands it be done without error.</p>
+      <p>If a document needs to hold up in a courtroom, at a land registry, or before a foreign authority, it is commissioned here with the same rigour either way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimony">
+  <div class="wrap">
+    <div class="quote-block reveal">
+      <div class="mark">&rdquo;</div>
+      <blockquote>Peter took the time to actually explain what each clause meant before I signed anything — the kind of attention you don't expect until you've been without it.</blockquote>
+      <cite>— Client, Property Transaction</cite>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Speak with the firm directly.</h2>
+      <p>No call centres, no junior hand-offs. Every enquiry is reviewed personally by Peter K. Kimochu.</p>
+      <ul class="contact-list">
+        <li><span>WhatsApp / Phone</span><a href="tel:+254712896296">0712 896 296</a></li>
+        <li><span>Email</span><a href="mailto:kariukikimochuadvocates@gmail.com">kariukikimochuadvocates@gmail.com</a></li>
+        <li><span>Office</span><span>Ground Floor, Suite 5, Nairobi</span></li>
+        <li><span>Postal</span><span>P.O. Box 0609&ndash;00100, Nairobi</span></li>
+      </ul>
+    </div>
+    <div class="contact-card reveal">
+      <div class="eyebrow">Request a Consultation</div>
+      <h3>Tell us about your matter</h3>
+      <form onsubmit="event.preventDefault(); this.querySelector('.btn-primary').textContent='Request sent';">
+        <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
+        <div class="field"><label for="email">Email or phone</label><input id="email" type="text" required></div>
+        <div class="field"><label for="matter">Brief description</label><textarea id="matter"></textarea></div>
+        <button type="submit" class="btn-primary">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Kariuki Kimochu &amp; Co. Advocates. All rights reserved.</p>
+    <p>Site by Marwa &mdash; marwa.dev</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .clause, .seal').forEach(el=> io.observe(el));
+
+  // Minimal drifting particles in hero
+  (function(){
+    const canvas = document.querySelector('.hero-particles');
+    if(!canvas) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const ctx = canvas.getContext('2d');
+    const hero = document.querySelector('.hero');
+    let w, h, particles, dpr;
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = hero.offsetWidth;
+      h = hero.offsetHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+
+    function makeParticles(){
+      const count = Math.max(18, Math.min(38, Math.floor(w / 45)));
+      particles = Array.from({length: count}, ()=> ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.3 + 0.4,
+        vx: (Math.random() - 0.5) * 0.08,
+        vy: -Math.random() * 0.12 - 0.03,
+        o: Math.random() * 0.35 + 0.12,
+        drift: Math.random() * Math.PI * 2
+      }));
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      particles.forEach(p=>{
+        p.drift += 0.002;
+        p.x += p.vx + Math.sin(p.drift) * 0.05;
+        p.y += p.vy;
+        if(p.y < -10){ p.y = h + 10; p.x = Math.random() * w; }
+        if(p.x < -10) p.x = w + 10;
+        if(p.x > w + 10) p.x = -10;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(216,176,103,' + p.o + ')';
+        ctx.fill();
+      });
+      if(!reduceMotion) requestAnimationFrame(draw);
+    }
+
+    resize();
+    makeParticles();
+    window.addEventListener('resize', ()=>{ resize(); makeParticles(); if(reduceMotion) draw(); });
+
+    if(reduceMotion){
+      draw(); // draw a single static frame, no loop
+    } else {
+      draw();
+    }
+  })();
+</script>
+
+</body>
+</html>
