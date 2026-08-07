@@ -126,7 +126,28 @@
   }
   .nav-cta::after{ display:none; }
   .nav-cta:hover{ background: var(--brass); color: var(--ink) !important; }
-  .menu-btn{ display:none; }
+  .menu-btn{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width: 36px;
+    height: 36px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
+  }
+  .menu-btn span{
+    display:block;
+    width:100%;
+    height:1.5px;
+    background: var(--brass-bright);
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .menu-btn[aria-expanded="true"] span:nth-child(1){ transform: translateY(6.5px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -496,7 +517,27 @@
   @media (max-width: 860px){
     .wrap{ padding: 0 24px; }
     nav{ padding: 16px 24px; }
-    .nav-links{ display:none; }
+    .menu-btn{ display:flex; }
+    .nav-links{
+      position:absolute;
+      top: 100%;
+      left:0;
+      right:0;
+      flex-direction:column;
+      gap:0;
+      background: var(--ink-2);
+      border-bottom: 1px solid rgba(181,138,62,0.25);
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .3s ease;
+    }
+    .nav-links.open{ max-height: 320px; }
+    .nav-links a{
+      padding: 16px 24px;
+      border-top: 1px solid rgba(220,211,188,0.1);
+    }
+    .nav-links a::after{ display:none; }
+    .nav-links .nav-cta{ margin: 14px 24px 18px; text-align:center; }
     .hero{ padding: 80px 0 60px; }
     .hero-inner{ grid-template-columns: 1fr; gap: 40px; }
     .hero-file{ border-left:none; border-top:1px solid rgba(216,176,103,0.3); padding-left:0; padding-top:24px; }
@@ -537,12 +578,15 @@
       </svg>
       <div class="brand-name">Kariuki Kimochu &amp; Co.<span>Advocates · Nairobi</span></div>
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#firm">The Firm</a>
       <a href="#practice">Practice</a>
       <a href="#seal">Notarial</a>
       <a href="#contact" class="nav-cta">Book a Consultation</a>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 </header>
 
@@ -676,7 +720,7 @@
     <div class="contact-card reveal">
       <div class="eyebrow">Request a Consultation</div>
       <h3>Tell us about your matter</h3>
-      <form onsubmit="event.preventDefault(); this.querySelector('.btn-primary').textContent='Request sent';">
+      <form id="consultForm">
         <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
         <div class="field"><label for="email">Email or phone</label><input id="email" type="text" required></div>
         <div class="field"><label for="matter">Brief description</label><textarea id="matter"></textarea></div>
@@ -698,6 +742,44 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal, .clause, .seal').forEach(el=> io.observe(el));
+
+  // Mobile menu toggle
+  (function(){
+    const btn = document.getElementById('menuBtn');
+    const links = document.getElementById('navLinks');
+    if(!btn || !links) return;
+
+    function closeMenu(){
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function toggleMenu(){
+      const open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    }
+    btn.addEventListener('click', toggleMenu);
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('resize', ()=>{ if(window.innerWidth > 860) closeMenu(); });
+  })();
+
+  // Consultation form: confirm, then reset
+  (function(){
+    const form = document.getElementById('consultForm');
+    if(!form) return;
+    const btn = form.querySelector('.btn-primary');
+    const originalLabel = btn.textContent;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      btn.textContent = 'Request sent';
+      btn.disabled = true;
+      setTimeout(()=>{
+        form.reset();
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+      }, 1400);
+    });
+  })();
 
   // Minimal drifting particles in hero
   (function(){
